@@ -1,0 +1,11 @@
+{
+  "generatedAt": null,
+  "source": "whatsapp-web",
+  "rules": {
+    "genderSource": "posting-schedule",
+    "girlsWindow": "Friday 07:00-18:00",
+    "lookbackDays": 14
+  },
+  "duplicatesSkipped": 0,
+  "records": []
+}

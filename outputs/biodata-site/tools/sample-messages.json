@@ -1,0 +1,9 @@
+{
+  "messages": [
+    {
+      "messageId": "whatsapp-message-id-example",
+      "postedAt": "2026-06-05T10:15:00+05:30",
+      "imagePath": "C:/path/to/downloaded/biodata-image.jpg"
+    }
+  ]
+}

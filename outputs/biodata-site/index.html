@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jainam Biodata</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <dialog id="pinDialog" class="pin-dialog">
+      <form id="pinForm" method="dialog" class="pin-panel">
+        <h1>Jainam Biodata</h1>
+        <label for="pinInput">Enter 6 digit PIN</label>
+        <input id="pinInput" name="pin" type="text" inputmode="numeric" maxlength="6" autocomplete="off" autofocus>
+        <p id="pinError" class="pin-error" role="alert"></p>
+        <button type="submit">Unlock</button>
+      </form>
+    </dialog>
+
+    <main id="app" class="app" hidden>
+      <header class="topbar">
+        <div>
+          <h1>Girls Biodata</h1>
+          <p>Grouped by birth year, loaded from verified WhatsApp image captures.</p>
+        </div>
+        <button id="refreshButton" class="icon-button" type="button" title="Refresh biodata">
+          <span aria-hidden="true">↻</span>
+          <span>Refresh</span>
+        </button>
+      </header>
+
+      <section class="status-band" aria-live="polite">
+        <div class="progress-copy">
+          <strong id="loadStatus">Waiting to load biodata</strong>
+          <span id="lastRefresh">Last refresh: never</span>
+        </div>
+        <div class="progress-track" aria-label="Biodata loading progress">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+      </section>
+
+      <section class="filters" aria-label="Biodata filters">
+        <label>
+          Birth year
+          <select id="yearFilter">
+            <option value="">All years</option>
+          </select>
+        </label>
+        <label>
+          City
+          <select id="cityFilter">
+            <option value="">All cities</option>
+          </select>
+        </label>
+        <label>
+          Caste
+          <select id="casteFilter">
+            <option value="">All castes</option>
+          </select>
+        </label>
+        <label>
+          Native place
+          <select id="nativePlaceFilter">
+            <option value="">All native places</option>
+          </select>
+        </label>
+        <label>
+          Religion
+          <select id="religionFilter">
+            <option value="">All religions</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="summary-row">
+        <span id="resultCount">0 biodatas</span>
+        <span id="duplicateCount">0 duplicates skipped</span>
+      </section>
+
+      <section id="biodataGrid" class="biodata-grid" aria-label="Biodata results"></section>
+      <p id="emptyState" class="empty-state" hidden>No matching biodata found.</p>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,278 @@
+:root {
+  color-scheme: light;
+  --ink: #17211f;
+  --muted: #66736f;
+  --line: #dbe4e0;
+  --surface: #ffffff;
+  --wash: #f4f7f6;
+  --accent: #0b7a75;
+  --accent-2: #b05638;
+  --danger: #b3261e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--wash);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.pin-dialog {
+  width: min(420px, calc(100vw - 32px));
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+}
+
+.pin-dialog::backdrop {
+  background: rgba(18, 27, 25, 0.72);
+}
+
+.pin-panel {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+  background: var(--surface);
+}
+
+.pin-panel h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.pin-panel label {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.pin-panel input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 22px;
+}
+
+.pin-panel button,
+.icon-button {
+  border: 0;
+  border-radius: 6px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  min-height: 42px;
+  padding: 0 16px;
+}
+
+.pin-error {
+  min-height: 20px;
+  margin: 0;
+  color: var(--danger);
+  font-size: 14px;
+}
+
+.app {
+  width: min(1440px, 100%);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.topbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0 20px;
+}
+
+.topbar h1 {
+  margin: 0 0 6px;
+  font-size: 34px;
+}
+
+.topbar p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.icon-button span[aria-hidden="true"] {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.status-band,
+.filters,
+.summary-row {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.status-band {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+
+.progress-copy {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--muted);
+}
+
+.progress-copy strong {
+  color: var(--ink);
+}
+
+.progress-track {
+  height: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e5ece9;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition: width 180ms ease;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+  padding: 16px;
+}
+
+.filters label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.filters select {
+  width: 100%;
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: white;
+  color: var(--ink);
+  padding: 0 10px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 12px 16px;
+  color: var(--muted);
+}
+
+.biodata-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.year-group {
+  display: contents;
+}
+
+.year-heading {
+  grid-column: 1 / -1;
+  margin: 12px 0 -2px;
+  font-size: 22px;
+}
+
+.biodata-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.biodata-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: #edf2f0;
+}
+
+.biodata-meta {
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.biodata-meta strong {
+  font-size: 16px;
+}
+
+.biodata-meta span {
+  color: var(--muted);
+}
+
+.empty-state {
+  margin: 28px 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 840px) {
+  .app {
+    padding: 16px;
+  }
+
+  .topbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .progress-copy,
+  .summary-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar h1 {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# OCR experiments
+work/ocr-test/
+work/ocr_output.txts
+
+# Debug output
+work/*.json
+
+# Generated images
+outputs/biodata-site/images/
+
+# Optional
+*.log
+.env
